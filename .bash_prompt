@@ -73,6 +73,7 @@ function git_color ()
         then
             # red if need to commit
             echo -e $RED
+            touch hei
         else
             if [[ "$STATUS" == *'Your branch is ahead'* ]]
             then
