@@ -71,3 +71,7 @@
 
 [push]
 	default = matching
+
+[user]
+	name = Erik Haider Forsén
+	email = erik@forsen.no
