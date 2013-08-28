@@ -13,18 +13,19 @@ if tput setaf 1 &> /dev/null; then
 	if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
 		MAGENTA=$(tput setaf 9)
 		ORANGE=$(tput setaf 172)
-		GREEN=$(tput setaf 190)
+		GREEN=$(tput setaf 10)
 		PURPLE=$(tput setaf 141)
 		WHITE=$(tput setaf 0)
 		RED=$(tput setaf 160)
 		YELLOW=$(tput setaf 226)
-		CYAN=$(tput setaf 51)
+		CYAN=$(tput setaf 192)
 	else
 		MAGENTA=$(tput setaf 5)
 		ORANGE=$(tput setaf 4)
 		GREEN=$(tput setaf 2)
 		PURPLE=$(tput setaf 1)
 		WHITE=$(tput setaf 7)
+		CYAN=$(tput setaf 6)
 	fi
 	BOLD=$(tput bold)
 	RESET=$(tput sgr0)
@@ -73,7 +74,6 @@ function git_color ()
         then
             # red if need to commit
             echo -e $RED
-            touch hei
         else
             if [[ "$STATUS" == *'Your branch is ahead'* ]]
             then
@@ -81,12 +81,12 @@ function git_color ()
                 echo -e $YELLOW
             else
                 # else cyan
-                echo -e $CYAN
+                echo -e $GREEN
             fi
         fi
     fi
 }
 
 
-export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$(git_color)\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$CYAN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[\$(git_color)\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
