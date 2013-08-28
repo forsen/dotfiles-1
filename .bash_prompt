@@ -48,6 +48,9 @@ export PURPLE
 export WHITE
 export BOLD
 export RESET
+export RED
+export YELLOW
+export CYAN
 
 function parse_git_dirty() {
 	[[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
