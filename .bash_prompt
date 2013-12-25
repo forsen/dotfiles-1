@@ -87,6 +87,16 @@ function git_color ()
     fi
 }
 
+function user_color ()
+{
+	if [[ $(id -u) -eq 0 ]]
+	then
+		echo -e $MAGENTA
+	else
+		echo -e $GREEN
+	fi
+}
 
-export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$CYAN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[\$(git_color)\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+
+export PS1="\[${BOLD}$(user_color)\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$CYAN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[\$(git_color)\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
