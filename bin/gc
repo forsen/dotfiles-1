@@ -1,0 +1,3 @@
+#!/bin/bash
+BASENAME=`echo $1 | sed 's/..$//'`
+gcc -Wall -v -o ~/bin/$BASENAME $1
