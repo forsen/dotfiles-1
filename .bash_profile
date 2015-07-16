@@ -1,6 +1,8 @@
 # Add `~/bin` to the `$PATH`
 export PATH="/usr/local/bin:$HOME/bin:$PATH"
 
+export NVM_DIR=~/.nvm/
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
