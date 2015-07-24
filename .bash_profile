@@ -43,3 +43,12 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # Set correct $JAVA_HOME
 [ -f /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home)
 
+# Adding completions for marks 
+_completemarks() {
+  local curw=${COMP_WORDS[COMP_CWORD]}
+  local wordlist=$(find $MARKPATH -type l -printf "%f\n")
+  COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
+  return 0
+}
+
+complete -F _completemarks jump unmark
