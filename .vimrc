@@ -105,4 +105,4 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
 " Set indent based on file type"
-set filetype indent on
+filetype indent on
