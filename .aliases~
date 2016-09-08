@@ -140,6 +140,3 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
-
-# LaTeX: Put auxillary files in a tmp directory
-alias pdflatex="mkdir -p tmp; pdflatex -output-directory tmp"
