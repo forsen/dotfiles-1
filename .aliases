@@ -143,3 +143,7 @@ alias reload="exec $SHELL -l"
 
 # LaTeX: Put auxillary files in a tmp directory
 alias pdflatex="mkdir -p tmp; pdflatex -output-directory tmp"
+
+# Prettify json 
+alias prettyjson="python -m json.tool"
+
