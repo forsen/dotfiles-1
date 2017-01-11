@@ -104,5 +104,8 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+execute pathogen#infect()
 " Set indent based on file type"
 filetype indent on
+filetype plugin indent on
+
