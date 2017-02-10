@@ -147,3 +147,6 @@ alias pdflatex="mkdir -p tmp; pdflatex -output-directory tmp"
 # Prettify json 
 alias prettyjson="python -m json.tool"
 
+# 'cat' last file in Downloads directory
+alias cn="cat '$(ls -t ~/Downloads/ |head -1)'"
+
